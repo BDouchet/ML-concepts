@@ -37,9 +37,25 @@ In this example, the number of parameters is :
 * For layer 2 : 4 * (3 + 1) = 16
 * For layer 3 or 4 : 4 * (4 + 1) = 20
 * For layer 5 : 4 + 1 = 5
+
 which gives a total number parameters equal to 61.
 
 <img src="https://i.pinimg.com/originals/b0/81/89/b08189699368cf0b71eed9931ee70881.png" width="400" height="200">
 
 To find the most efficient combination of weights, we need to use backpropagation algorithm
 
+## Training a Neural Network
+
+NN are in the family of supervised learning algorithm. In other words, it is necessary to give two data to the network during the training phase : X and Y where X is the input signal and Y the correct answer. Thus the training phase needs to know the correct answer, compare it to the prediction and adjust the wieghts of the NN.
+
+We take the example of a single neuron trying to predict the closing price of an auction using highest and lowest price of the day before. It is represented as below, with input0=lowest price, input1=highest price and output = tomorrow closing price :
+<img src="https://www.allaboutcircuits.com/uploads/thumbnails/how-to-perform-classification-using-a-neural-network-a-simple-perceptron-example_rk_aac_image1.jpg" width="400" height="200">
+We consider this NN has two parameters : weigth0 and weigth1.
+
+A training phase is composed of three steps :
+* **Inference** : the NN predict the value considering the inputs
+* **Loss Calculation** : Calcualte the loss between the prediction and the ground truth (MAE for instance for this type of problem)
+* **Backpropagation** : Change of the weights according to the loss and the learning rate (defined arbitrary)
+
+If we sample an example, we can imagine that the loss might be representated like in the image below. The plan made of (theta0, theta1) maps the different inputs of the NN and the z-axis stands for the loss associated to each combinations. With 2 parameters, finding the best combination is simple. However, NN have a lot of parameters, so it is computationally expensive to calculate the combinations of parameters that minimize the loss of the NN. To achieve this, we use gradient descent algorithm. The core idea is to calculate the gradient of our function and to change the parameters according to the gradient and the learning rate: 
+<img src="https://miro.medium.com/max/2732/1*f9a162GhpMbiTVTAua_lLQ.png" width="400" height="300">
