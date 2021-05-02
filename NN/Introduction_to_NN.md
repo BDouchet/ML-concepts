@@ -26,7 +26,7 @@ The number of parameters of a neuron is thus equal to n+1.
 
 <img src="https://images.deepai.org/glossary-terms/perceptron-6168423.jpg" width="400" height="200">
 
-\
+
 \
 ## The Neural Network
 
@@ -58,4 +58,18 @@ A training phase is composed of three steps :
 * **Backpropagation** : Change of the weights according to the loss and the learning rate (defined arbitrary)
 
 If we sample an example, we can imagine that the loss might be representated like in the image below. The plan made of (theta0, theta1) maps the different inputs of the NN and the z-axis stands for the loss associated to each combinations. With 2 parameters, finding the best combination is simple. However, NN have a lot of parameters, so it is computationally expensive to calculate the combinations of parameters that minimize the loss of the NN. To achieve this, we use gradient descent algorithm. The core idea is to calculate the gradient of our function and to change the parameters according to the gradient and the learning rate: 
+
 <img src="https://miro.medium.com/max/2732/1*f9a162GhpMbiTVTAua_lLQ.png" width="400" height="300">
+
+## Applications
+Real Application of NN are mutliple :
+* Functions approximations
+* DNA Analysis for classification
+* Financial Prediction
+* Medical Diagnosis
+* E-mail Filtering
+* Fraud detection
+
+## Ressources
+
+[playground Tensorflow](https://playground.tensorflow.org/)
